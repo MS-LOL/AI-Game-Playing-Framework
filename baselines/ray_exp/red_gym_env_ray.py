@@ -238,8 +238,8 @@ class RedGymEnv(gym.Env):
         self.model_frame_writer.add_image(self.render(reduce_res=True, update_mem=False))
     
     def append_agent_stats(self):
-        x_pos = self.read_m(X_POS_ADDRESS)
-        y_pos = self.read_m(Y_POS_ADDRESS)
+        x_pos = self.read_m(MAP_X)
+        y_pos = self.read_m(MAP_Y)
         map_n = self.read_m(MAP_N_ADDRESS)
         levels = [self.read_m(a) for a in LEVELS_ADDRESSES]
         self.agent_stats.append({
